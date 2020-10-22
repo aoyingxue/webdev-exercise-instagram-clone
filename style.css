@@ -126,6 +126,19 @@ span.id-name {
     margin-right: 2rem;
 }
 
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+        /* /* float: right; */
+        right: 300px;
+        width: 400px;
+    }
+}
+
+*/ .row {
+    position: relative;
+}
+
 
 /* buttons */
 
