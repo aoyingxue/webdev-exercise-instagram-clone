@@ -130,12 +130,12 @@ span.id-name {
     #sidebar {
         position: fixed;
         /* /* float: right; */
-        right: 300px;
-        width: 400px;
+        right: 18%;
+        width: 18%;
     }
 }
 
-*/ .row {
+.row {
     position: relative;
 }
 
