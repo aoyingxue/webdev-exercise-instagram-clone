@@ -1,31 +1,423 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Instagram Clone</title>
-        <link href="style.css" type="text/css" rel="stylesheet">
-        <meta name="author" content="Yuki Ao">
-        <meta name="keywords" content="Instagram, ins, insta, ig, clone">
-        <meta charset="UTF-8">
-    </head>
-    
-    <body>
-        
-        <!-- <i class="far fa-heart logo" id="heart-logo"></i> -->
-        <!-- <i class="far fa-bookmark logo" id="bookmark-logo"></i> -->
-    
-        <!-- header bar -->
-        <div class="wrapper">
-            <div class="nav">
-                <div class="flexbox left">
-                    <i class="fab fa-instagram logo" id="instagram-logo"></i>
-                    <img alt="Instagram" class="brand logo" src="/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+<html>
+
+<head>
+    <title>Instagram Clone</title>
+
+    <!-- Required meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Yuki Ao">
+    <meta name="keywords" content="Instagram, ins, insta, ig, clone">
+    <meta charset="UTF-8">
+
+    <!-- font awesome kit settings -->
+    <script src="https://kit.fontawesome.com/b3ec44c2bf.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- header bar -->
+    <div class="nav-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container justify-content-center">
+                <div class="d-flex flex-row justify-content-between align-items-center col-12">
+                    <!-- instagram logo -->
+                    <div class="logo navbar-brand">
+                        <i class="fab fa-instagram fa-lg"></i>
+                        <!-- vertical line -->
+                        <div class="vl"></div>
+                        <div class="instagram-brand">
+                            <a href='#'>
+                                <img src="images/instagram-brand.png" alt="Instagram-logo">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- end of instagram brand logo -->
+                    <!-- search box -->
+                    <div class="searchbox">
+                        <form class="form-inline input-icons justify-content-between align-items-center">
+                            <input class="form-control mr-sm-2" placeholder="Search" type="search" aria-label="Search">
+                        </form>
+                    </div>
+                    <!-- end of search box -->
+                    <!-- other icons -->
+                    <div class="icons">
+                        <ul class="list-inline m-0">
+                            <li class="list-inline-item mr-4">
+                                <i class="far fa-compass fa-2x"></i>
+                            </li>
+                            <li class="list-inline-item mr-4">
+                                <i class="far fa-heart fa-2x"></i>
+                            </li>
+                            <li class="list-inline-item">
+                                <i class="far fa-user fa-2x"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end of icons -->
                 </div>
-                <div class="searchbox">
-                    <input class="search" type="text" placeholder="Search">
+            </div>
+        </nav>
+    </div>
+
+    <!-- main page -->
+    <div class="container mainpage">
+        <div class="d-flex justify-content-center">
+            <div class="row">
+                <!-- main post bar -->
+                <div class="col-lg-8 col-md-12 col-sm-12">
+                    <!-- start of posts using bootstrap flex and stacked cards -->
+                    <div class="d-flex flex-column" id="posts">
+                        <!-- START OF the first card -->
+                        <div class="card" id="post">
+                            <!-- profile id -->
+                            <div class="card-header" id="profile-id">
+                                <div class="d-flex flex-row align-items-center profile">
+                                    <!-- profile photo -->
+                                    <div class="d-flex justify-content-center align-items-center rounded-circle overflow-hidden profile-photo">
+                                        <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s320x320/118405913_2278935758903024_5502718583680743198_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=KxltmBSR_aoAX___mbj&oh=74f9e208983ec560019d41b7f3327574&oe=5FB8CD72" alt="nounou_official's profile picture">
+                                    </div>
+                                    <span class="id-name">nounou_official</span>
+                                </div>
+                            </div>
+                            <!-- end of profile id header -->
+
+                            <!-- post image with no padding-->
+                            <div class="card-body p-0">
+                                <img class="card-img-top" src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-15/e35/121626439_351600862744573_7304778626976346723_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_cat=101&_nc_ohc=aNoinTJldPkAX_YNqV_&_nc_tp=18&oh=c603cd4007d29988c0495b888f26a7f5&oe=5FBBD13E"
+                                    alt="post-photo-1">
+                            </div>
+                            <!-- end of post image -->
+
+                            <!-- like, comment, share and save buttons -->
+                            <div class="d-flex justify-content-between post-buttons">
+                                <!-- left buttons -->
+                                <ul class="line-inline left-buttons" id="buttons-left">
+                                    <li class="list-inline-item">
+                                        <button class="btn" id="heart-btn">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <button class="btn" id="comment-btn">
+                                            <i class="far fa-comment"></i>
+                                        </button>
+                                    </li>
+                                    <li class="list-inline-item" id="share-btn">
+                                        <button class="btn">
+                                            <img src="images/share.png" alt="share button">
+                                        </button>
+                                    </li>
+                                </ul>
+                                <!-- right button -->
+                                <div id="buttons-right">
+                                    <button class="btn" id="save-btn">
+                                        <i class="far fa-bookmark fa-2x"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end of buttons -->
+                            <!-- likes, subtitle -->
+                            <div class="subtitles">
+                                <div class="subs" id="post-likes">
+                                    <strong>17,096 likes</strong>
+                                </div>
+                                <div class="subs" id="post-subs">
+                                    <strong>nounou_official</strong>
+                                    <p>See you tomorrow at Café NouNou <a class="id-name" href="https://www.instagram.com/studioconcrete/">@studioconcrete</a></p>
+                                </div>
+                                <div class="subs" id="post-date">
+                                    5 DAYS AGO
+                                </div>
+                            </div>
+                            <!-- end of subtitles -->
+                            <!-- comments -->
+                            <div class="comments">
+                                <form>
+                                    <input class="form-control post-comments" type="text" placeholder="Add a comment...">
+                                    <button class="btn post-comment-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END OF the first card -->
+
+                        <!-- START OF the 2nd card -->
+                        <div class="card" id="post">
+                            <!-- profile id -->
+                            <div class="card-header" id="profile-id">
+                                <div class="d-flex flex-row align-items-center profile">
+                                    <!-- profile photo -->
+                                    <div class="d-flex justify-content-center align-items-center rounded-circle overflow-hidden profile-photo">
+                                        <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s320x320/104166431_307533046922955_5318153909346043619_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=znHkfLhIp4EAX9r9Kwy&oh=25ae6ea5aefce97e99b34b061f479691&oe=5FBB094A" alt="wavyseoul's profile picture">
+                                    </div>
+                                    <span class="id-name">wavyseoul</span>
+                                </div>
+                            </div>
+                            <!-- end of profile id header -->
+
+                            <!-- post image with no padding-->
+                            <div class="card-body p-0">
+                                <img class="card-img-top" src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-15/e35/p1080x1080/121466036_2754880218089493_8452639096795867786_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_cat=109&_nc_ohc=fRte634Zv0QAX_DCbY6&tp=19&oh=fd83f08fc8454afb2df15dd950934d13&oe=5FB877F0"
+                                    alt="post-photo-2">
+                            </div>
+                            <!-- end of post image -->
+
+                            <!-- like, comment, share and save buttons -->
+                            <div class="d-flex justify-content-between post-buttons">
+                                <!-- left buttons -->
+                                <ul class="line-inline left-buttons" id="buttons-left">
+                                    <li class="list-inline-item">
+                                        <button class="btn" id="heart-btn">
+                                            <i class="far fa-heart"></i>
+                                        </button>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <button class="btn" id="comment-btn">
+                                            <i class="far fa-comment"></i>
+                                        </button>
+                                    </li>
+                                    <li class="list-inline-item" id="share-btn">
+                                        <button class="btn">
+                                            <img src="images/share.png" alt="share button">
+                                        </button>
+                                    </li>
+                                </ul>
+                                <!-- right button -->
+                                <div id="buttons-right">
+                                    <button class="btn" id="save-btn">
+                                        <i class="far fa-bookmark fa-2x"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- end of buttons -->
+                            <!-- likes, subtitle -->
+                            <div class="subtitles">
+                                <div class="subs" id="post-likes">
+                                    <strong>2,554 likes</strong>
+                                </div>
+                                <div class="subs" id="post-subs">
+                                    <strong>wavyseoul</strong>
+                                    <p>wavy 2020 F/W<br> new generation : w<br> 20 10 16 8pm<br> wavyarchive.kr</p>
+                                </div>
+                                <div class="subs" id="post-date">
+                                    1 DAY AGO
+                                </div>
+                            </div>
+                            <!-- end of subtitles -->
+                            <!-- comments -->
+                            <div class="comments">
+                                <form>
+                                    <input class="form-control post-comments" type="text" placeholder="Add a comment...">
+                                    <button class="btn post-comment-btn">
+                                        <i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- END OF the 2nd card -->
+                        <!-- START OF suggestions -->
+                        <div class="card" id="suggestions">
+                            <div class="d-flex card-header justify-content-between align-items-center">
+                                <strong id="suggest-header">Suggestions For You</strong>
+                                <button class="btn btn-outline-primary btn-sm" id="see-all-btn">
+                                    See All
+                                </button>
+                            </div>
+
+                            <div class="card-body" id="suggestion-cards">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <!-- START OF first suggestion card -->
+                                        <div class="card d-flex" id="suggestion-1">
+                                            <div class="card-body text-center mx-auto">
+                                                <!-- profile photo -->
+                                                <div class="d-flex justify-content-center align-items-center rounded-circle suggestion-photo">
+                                                    <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s320x320/118211267_345210783319403_1740924532313936568_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=Pudb754VdDYAX-HcdKV&oh=1714e737822e44e630c1ea89b3f72277&oe=5FB955F6" alt="stlouisblues's profile picture">
+                                                </div>
+                                                <div class="text-center">
+                                                    <strong>St. Louis Blues</strong>
+                                                    <p>Popular</p>
+                                                </div>
+                                                <button class="btn btn-primary suggestion-follow-btn">
+                                                    Follow
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- END OF first suggestion card -->
+                                    </div>
+
+                                    <div class="col-4" id="suggestion-2">
+                                        <!-- START OF 2nd suggestion card -->
+                                        <div class="card d-flex" id="suggestion-2">
+                                            <div class="card-body text-center mx-auto">
+                                                <!-- profile photo -->
+                                                <div class="d-flex justify-content-center align-items-center rounded-circle suggestion-photo">
+                                                    <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s320x320/106302555_639894650068904_6953002077735406103_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=mqzvNHywhgMAX9TpFGh&oh=f1aaa7fccae85c03cb9880c61b6f357a&oe=5FB942AA" alt="stlouisblues's profile picture">
+                                                </div>
+                                                <div class="text-center">
+                                                    <strong>CONAN</strong>
+                                                    <p>Followed by someperson</p>
+                                                </div>
+                                                <button class="btn btn-primary suggestion-follow-btn">
+                                                    Follow
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- END OF 2nd suggestion card -->
+                                    </div>
+                                    <div class="col-4" id="suggestion-3">
+                                        <!-- START OF 3rd suggestion card -->
+                                        <div class="card d-flex" id="suggestion-3">
+                                            <div class="card-body text-center mx-auto">
+                                                <!-- profile photo -->
+                                                <div class="d-flex justify-content-center align-items-center rounded-circle suggestion-photo">
+                                                    <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s320x320/74642772_778488129253510_5783690810054672384_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=PhwsrafMp2cAX8lajr9&oh=64d0f949fba06f7aff45a2f3a1c69b21&oe=5FBC18AC" alt="stlouisblues's profile picture">
+                                                </div>
+                                                <div class="text-center">
+                                                    <strong>Mumford & Sons</strong>
+                                                    <p>Followed by foobar1</p>
+                                                </div>
+                                                <button class="btn btn-primary suggestion-follow-btn">
+                                                    Follow
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- END OF first suggestion card -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END OF suggestions -->
+                    </div>
                 </div>
-                
+                <!-- end of main post bar -->
+
+                <!-- side bar -->
+                <div class="col-lg-4 d-none d-lg-block d-xl-block">
+                    <!-- own profile -->
+                    <div class="card story-info-card">
+                        <div class="card-header story-info-header">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="d-flex justify-content-center align-items-center rounded-circle story-profile-photo">
+                                    <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/119858444_1055051434934764_8613314753060794893_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=_Sl2RjlcLHoAX9bt7hw&oh=be243854d22f5fb8bfffd7c5d1824253&oe=5FBB92DB" alt="my-profile-photo">
+                                </div>
+                                <div class="profile-info">
+                                    <span class="profile-username">yuki.ao</span>
+                                    <span class="profile-id">Yuki Ao</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- other stories -->
+                    <div class="stories">
+                        <div class="d-flex flex-row justify-content-between">
+                            <strong>Stories</strong>
+                            <p>Watch All</p>
+                        </div>
+                        <div class="d-flex flex-row align-items-center story">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle border border-danger story-profile-photo">
+                                <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/121633915_124636585827676_4617793367777757807_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=hopN8AAZiZwAX8dW5Ie&oh=e4894fd1c37ae8477cdfa984e0db7162&oe=5FBA14CC" alt="crush-profile-photo">
+                            </div>
+                            <div class="story-info">
+                                <span class="profile-username">crush9244</span>
+                                <span class="story-time">6 HOURS AGO</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center story">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle border border-danger story-profile-photo">
+                                <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/106038463_270198174195670_486666916322236627_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=rl8BfFZ2AQ4AX8pUVo7&oh=cfc5e98ef7ce44512555d4d84131a4cd&oe=5FB927C2" alt="loco-profile-photo">
+                            </div>
+                            <div class="story-info">
+                                <span class="profile-username">satgotloco</span>
+                                <span class="story-time">4 HOURS AGO</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center story">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle border border-danger story-profile-photo">
+                                <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/106501241_696152537612038_3334979457696582906_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=TN4g4NfDipIAX9RNea7&oh=091d7061c21aaea1bd5caadbdeff573f&oe=5FBA6651" alt="timeaftertime-profile-photo">
+                            </div>
+                            <div class="story-info">
+                                <span class="profile-username">timeaftertime</span>
+                                <span class="story-time">5 HOURS AGO</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center story">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle border border-danger story-profile-photo">
+                                <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/118405913_2278935758903024_5502718583680743198_n.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=KxltmBSR_aoAX9W98b8&oh=85a4c630f0f3880e002677fc868e6766&oe=5FBC51E7" alt="nounou-profile-photo">
+                            </div>
+                            <div class="story-info">
+                                <span class="profile-username">nounou_official</span>
+                                <span class="story-time">4 HOURS AGO</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center story">
+                            <div class="d-flex justify-content-center align-items-center rounded-circle border border-danger story-profile-photo">
+                                <img src="https://scontent-ort2-2.cdninstagram.com/v/t51.2885-19/s150x150/11313591_1495233130779464_63838200_a.jpg?_nc_ht=scontent-ort2-2.cdninstagram.com&_nc_ohc=WAtsQrTLZhEAX_ha7sz&oh=90a07eedff8035cf184a21c053eeddeb&oe=5FBB309F" alt="ellephantt-profile-photo">
+                            </div>
+                            <div class="story-info">
+                                <span class="profile-username">ellephantt</span>
+                                <span class="story-time">10 HOURS AGO</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <nav class="footer-nav">
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="https://about.instagram.com/">About</a>
+                                </li>
+                                <li>
+                                    <a href="https://help.instagram.com/">Help</a>
+                                </li>
+                                <li>
+                                    <a href="https://about.instagram.com/blog/">Press</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/developer/">API</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/about/jobs/">Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/legal/privacy/">Privacy</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/legal/terms/">Terms</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/explore/locations/">Locations</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/directory/profiles/">Top Accounts</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/directory/hashtags/">Hashtags</a>
+                                </li>
+                                <li>
+                                    <a href="#">Language</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <span class="credit">© 2020 Instagram from Facebook</span>
+                    </div>
+                </div>
+                <!-- end of side bar -->
+
             </div>
         </div>
-    
-    </body>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+</body>
+
 </html>
