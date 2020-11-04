@@ -1,6 +1,4 @@
-# Instagram Clone
-
-For this assignment, you will create a site that looks similar to Instagram.
+# Instagram Clone: create a site that looks similar to Instagram.
 
 Your design must use the images below. Do not base your design on the current version of Instagram!
 You can use any tools we've learned in class, including Bootstrap or another CSS framework, as long as you fulfill the requirements for the assignment and it looks as similar to Instagram as possible. You may not copy code from Instagram's website. 
